@@ -31,11 +31,9 @@ def test_shorten_and_redirect(client):
     assert "original_url" in data
     assert data["original_url"] == url_data["url"]
 
-    # Extract short code
     short_url = data["short_url"]
     short_code = short_url.rsplit('/', 1)[-1]
 
-    # Test redirection
     redirect_response = client.get(f'/{short_code}', follow_redirects=False)
     assert redirect_response.status_code == 302
     assert redirect_response.headers["Location"] == url_data["url"]

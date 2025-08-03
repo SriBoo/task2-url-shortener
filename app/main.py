@@ -1,11 +1,11 @@
-# app/main.py
+
 
 from flask import Flask, render_template, request, redirect, flash
 from app.models import url_mapping
 from app.utils import generate_short_id
 
 app = Flask(__name__)
-app.secret_key = 'retainsecret'  # Needed for flash messages
+app.secret_key = 'retainsecret' 
 
 @app.route("/", methods=["GET", "POST"])
 def index():

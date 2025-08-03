@@ -3,9 +3,7 @@
 # - Generating short codes
 # - Validating URLs
 # - Any other helper functions you need
-# app/utils.py
 
-# app/utils.py
 import random
 import string
 
